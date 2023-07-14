@@ -30,3 +30,8 @@ test('Should be under 0', () => {
 test('There is no s in Cube', () => {
   expect('Cube').not.toMatch(/S/i)
 })
+// Check an item in an array
+test('Cat should be in pets', () => {
+  pets = ['dog', 'bird', 'cat']
+  expect(pets).toContain('cat')
+})
