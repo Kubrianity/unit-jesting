@@ -35,3 +35,17 @@ test('Cat should be in pets', () => {
   pets = ['dog', 'bird', 'cat']
   expect(pets).toContain('cat')
 })
+// Working with promises
+test('Fetched username should be Ervin Howell', () => {
+  expect.assertions(1)
+  return functions.fetchUser()
+    .then(user => {
+      expect(user.name).toEqual('Ervin Howell')
+    })
+})
+// Working with async await
+test('Fetched username should be Ervin Howell', async () => {
+  expect.assertions(1)
+  const user = await functions.fetchUser()
+  expect(user.name).toEqual('Ervin Howell')
+})
